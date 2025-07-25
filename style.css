@@ -1,54 +1,205 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SerTec | Reparación de PC y Consolas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>SERTEC</h1>
-        <nav>
-            <ul>
-                <li><a href="#pc">Reparación de PC</a></li>
-                <li><a href="#consolas">Consolas</a></li>
-                <li><a href="#electronica">Electrónica</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    <section id="pc">
-        <h2>Reparación y Mantenimiento de PC</h2>
-        <p>Diagnóstico, limpieza, formateo, instalación de software, actualización de hardware y más.</p>
-    </section>
+header {
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
 
-    <section id="consolas">
-        <h2>Reparación de Consolas</h2>
-        <p>Solución de errores de software y hardware en consolas como PlayStation, Xbox y Nintendo. Limpieza, cambio de pasta térmica, reemplazo de componentes.</p>
-    </section>
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    margin-bottom: 1cm;
+    animation: fadeSlideIn 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
 
-    <section id="electronica">
-        <h2>Reparación Electrónica</h2>
-        <p>Reparación de equipos con fallas eléctricas, placas quemadas, cambio de capacitores, fuentes dañadas, motherboards con cortos, etc.</p>
-    </section>
+/* Animación de entrada */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Escribinos para presupuestos o consultas:</p>
-        <ul>
-            <li>Email: contacto@tuserviciotecnico.com</li>
-            <li>WhatsApp: +54 9 11 1234-5678</li>
-            <li>Dirección: Av. Siempre Viva 123, Ciudad</li>
-        </ul>
-    </section>
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
 
-    <footer>
-        <p>&copy; 2025 Servicio Técnico Informático</p>
-        <p>Desarrollado por <a href="https://github.com/Martin-Pasiecznik">Martin Pasiecznik</a> </p>
-    </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+}
+
+/* Secciones con imagen de fondo */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    padding: 4rem 2rem;
+    height: 400px; /* o el tamaño que prefieras */
+
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+section:hover {
+    filter: grayscale(0%);
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: text-shadow 0.3s ease;
+}
+
+section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    transition: text-shadow 0.3s ease;
+}
+
+
+/* Efecto al pasar el mouse para resaltar el texto */
+section:hover h2 {
+    /* Ya no cambia de tamaño */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+section:hover p {
+    /* Ya no cambia de tamaño */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Fondo específico por sección */
+#pc {
+    background-image: url("assets/img/pc.jpg");
+}
+
+#consolas {
+    background-image: url("assets/img/consolas.webp");
+}
+
+#electronica {
+    background-image: url("assets/img/electronica.jpg");
+}
+
+#contacto {
+    background-image: url("assets/img/contacto.jpeg");
+}
+
+/* mejorar lectura del texto con capa oscura en cada imagne*/
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* oscurece el fondo */
+    z-index: 0;
+    transition: background-color 0.3s ease;
+}
+
+section:hover::before {
+    background-color: rgba(0, 0, 0, 0.2); /* más claro al hacer hover */
+}
+
+/* Asegurarse de que el contenido esté por encima de la capa oscura */
+section h2,
+section p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Evita el scroll horizontal por márgenes o padding mal manejados */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Hace que las secciones se adapten bien al tamaño de pantalla */
+section {
+    height: auto;
+    min-height: 400px;
+    padding: 3rem 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Asegura que el texto no se salga del contenedor */
+section p {
+    word-wrap: break-word;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
