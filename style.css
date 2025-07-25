@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    margin-bottom: 1cm;
+    animation: fadeSlideIn 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animación de entrada */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+}
+
+/* Secciones con imagen de fondo */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    padding: 4rem 2rem;
+    height: 400px; /* o el tamaño que prefieras */
+
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+section:hover {
+    filter: grayscale(0%);
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: text-shadow 0.3s ease;
+}
+
+section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    transition: text-shadow 0.3s ease;
+}
+
+
+/* Efecto al pasar el mouse para resaltar el texto */
+section:hover h2 {
+    /* Ya no cambia de tamaño */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+section:hover p {
+    /* Ya no cambia de tamaño */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Fondo específico por sección */
+#pc {
+    background-image: url("assets/img/pc.jpg");
+}
+
+#consolas {
+    background-image: url("assets/img/consolas.webp");
+}
+
+#electronica {
+    background-image: url("assets/img/electronica.jpg");
+}
+
+#contacto {
+    background-image: url("assets/img/contacto.jpeg");
+}
+
+/* mejorar lectura del texto con capa oscura en cada imagne*/
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* oscurece el fondo */
+    z-index: 0;
+    transition: background-color 0.3s ease;
+}
+
+section:hover::before {
+    background-color: rgba(0, 0, 0, 0.2); /* más claro al hacer hover */
+}
+
+/* Asegurarse de que el contenido esté por encima de la capa oscura */
+section h2,
+section p {
+    position: relative;
+    z-index: 1;
+}
