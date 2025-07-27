@@ -44,3 +44,21 @@ document.addEventListener("DOMContentLoaded", function () {
         mensaje.textContent = tips[i];
     }, 8000); // cada 8 segundos
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const asistente = document.getElementById("asistente-flotante");
+
+    function checkScroll() {
+        const isMobile = window.innerWidth <= 800;
+        const scrollBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+
+        if (isMobile && scrollBottom) {
+            asistente.style.display = "none";
+        } else if (isMobile) {
+            asistente.style.display = "flex";
+        }
+    }
+
+    window.addEventListener("scroll", checkScroll);
+});

@@ -320,6 +320,8 @@ footer a:hover {
 
 /* Asistente */
 #asistente-flotante {
+    display: flex; /* importante para reactivar si se oculta */
+    align-items: center;
     position: fixed;
     bottom: 20px;
     right: 20px;
