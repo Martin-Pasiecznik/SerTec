@@ -262,3 +262,82 @@ section {
 section.active {
     filter: grayscale(0%);
 }
+
+
+
+/* seccion final */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: #00e676;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1aff99;
+    text-shadow: 1px 1px 3px #0f0;
+}
+
+.dev-link {
+    font-size: 1.1rem;
+    color: #00bcd4;
+}
+
+.promo {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25d366;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    background-color: #1ebc59;
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Asistente */
+#asistente-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #222;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    font-size: 0.95rem;
+    max-width: 250px;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+#asistente-flotante:hover {
+    opacity: 1;
+    cursor: default;
+}
+
+

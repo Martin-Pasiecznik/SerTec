@@ -25,3 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tips = [
+        "💡 ¿Tu PC se apaga sola? Podría ser temperatura.",
+        "🧼 Limpieza interna cada año mejora el rendimiento y aumenta la vida útil de tu equipo.",
+        "🔋 ¿Tu notebook no carga? Revisamos el conector sin costo.",
+        "🎮 Reparamos consolas con HDMI roto o sin imagen.",
+        "🖨 Vendemos tintas, tóners y periféricos de calidad.",
+        "⚠️ Una fuente defectuosa puede quemar tu placa madre.",
+    ];
+
+    let i = 0;
+    const mensaje = document.getElementById("mensaje-tip");
+
+    setInterval(() => {
+        i = (i + 1) % tips.length;
+        mensaje.textContent = tips[i];
+    }, 8000); // cada 8 segundos
+});
